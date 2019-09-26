@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p>uno</p>
+        <p>dos</p>
+        <p>tres</p>
+        <p>cuatro</p>
+        <p>cinco</p>
+        <p>seis</p>
+        <p>siete</p>
+        <p>ocho</p>
+        <p>nueve</p>
+        <p>diez</p>
+    </body>
+    <script>
+        (function verBucle() {
+            console.log('verBucle()');
+
+            var etiquetas = document.getElementsByTagName('p');
+            var contador = 0;
+            while (contador < etiquetas.length) {
+                console.log(etiquetas[contador].innerHTML);
+                contador++;
+            }
+        })();
+    </script>
+</html>
