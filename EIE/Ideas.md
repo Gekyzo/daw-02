@@ -3,4 +3,3 @@
 - Aplicación para organizar apuntes y aula virtual para toda la clase
 - Alquiler de mascotas
 - Aplicación con ejercicios de Programación y tutoriales con plan de estudio (roadmap)
-
