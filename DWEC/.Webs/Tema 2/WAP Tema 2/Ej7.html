@@ -25,41 +25,41 @@ existe un valor válido para tipo de bomba”.
 
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <script>
-        function dimeTipoMotor() {
-            var tipo = prompt('Introduce el tipo de motor (1, 2, 3, 4)');
-            switch (tipo) {
-                case 0:
-                    console.log('No hay establecido un valor predefinido para el tipo de bomba');
-                    break;
-                case 1:
-                    console.log('La bomba es una bomba de agua');
-                    break;
-                case 2:
-                    console.log('La bomba es una bomba de gasolina');
-                    break;
-                case 3:
-                    console.log('La bomba es una bomba de hormigón');
-                    break;
-                case 4:
-                    console.log('La bomba es una bomba de pasta alimenticia');
-                    break;
-                default:
-                    console.log('No existe un valor válido para tipo de bomba');
-                    break;
-            }
-        };
-        dimeTipoMotor();
+      (function dimeTipoMotor() {
+        let tipo = parseInt(prompt("Introduce el tipo de motor (1, 2, 3, 4)"));
+        let res;
+        switch (tipo) {
+          case 0:
+            res =
+              "No hay establecido un valor predefinido para el tipo de bomba";
+            break;
+          case 1:
+            res = "La bomba es una bomba de agua";
+            break;
+          case 2:
+            res = "La bomba es una bomba de gasolina";
+            break;
+          case 3:
+            res = "La bomba es una bomba de hormigón";
+            break;
+          case 4:
+            res = "La bomba es una bomba de pasta alimenticia";
+            break;
+          default:
+            res = "No existe un valor válido para tipo de bomba";
+            break;
+        }
+        console.log(res);
+      })();
     </script>
-</body>
-
+  </body>
 </html>
