@@ -10,3 +10,8 @@
 
 - [Array.prototype JavaScript. Diferenciar array, array-like, NodeList](https://www.aprenderaprogramar.es/index.php?option=com_content&view=article&id=868:arrayprototype-javascript-diferenciar-array-array-like-nodelist-typeerror-not-function-no-method-cu01180e&catid=78:tutorial-basico-programador-web-javascript-desde-&Itemid=206)
 
+## Tema 3 - 
+
+- [Code Charts](http://www.unicode.org/charts/)
+- [JavaScript Arrays](https://www.w3schools.com/js/js_arrays.asp)
+- [JavaScript best practices - W3C](https://www.w3.org/wiki/JavaScript_best_practices)

@@ -1,0 +1,59 @@
+<!--
+Crea un script en el que al hacer clic sobre alguna de estas palabras: Manzana, Pera, Fresa, Nectarina, Kiwi, Mango, Frambuesa
+que aparecerán con aspecto de botón, nos haga introducir por el prompt de javascript el nombre que pone en el botón,
+lo recojamos en un array y nos muestre dicha palabra deletreada con sus posiciones del derecho y del revés.
+Nota: hacerlo con css. Puedes intentar crear efecto hover, al pasar el ratón.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+        button {
+            color: white;
+            background-color: indianred;
+            border-radius: 20px;
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+
+        button:hover {
+            background-color: darkred;
+            transition: background-color 2s linear;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="fruitName(this)">Manzana</button>
+    <button onclick="fruitName(this)">Pera</button>
+    <button onclick="fruitName(this)">Fresa</button>
+    <button onclick="fruitName(this)">Nectarina</button>
+    <button onclick="fruitName(this)">Kiwi</button>
+    <button onclick="fruitName(this)">Mango</button>
+    <button onclick="fruitName(this)">Frambuesa</button>
+
+    <script>
+        function fruitName(element) {
+            var fruit = prompt("Introduce el nombre de la fruta elegida:");
+            var fruitArray = fruit.split("");
+            if (fruit.toLowerCase() == element.innerHTML.toLowerCase()) {
+                fruitArray.forEach((letter, index) => {
+                    alert('La letra en la posición' + index + ' es ' + letter);
+                });
+                fruitArray.reverse().forEach((letter, index) => {
+                    alert('La letra en la posición' + index + ' es ' + letter);
+                });
+            } else {
+                alert('El valor introducido no coincide con el del botón');
+            }
+        }
+    </script>
+</body>
+
+</html>

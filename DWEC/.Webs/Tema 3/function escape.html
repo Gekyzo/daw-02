@@ -1,0 +1,26 @@
+<!-- 
+    escape() recibe como argumento una cadena de caracteres y devuelve esa misma cadena sustituida con su codificación en ASCII.
+    
+    unescape() sería la función contraria de decodificación.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var input = prompt('Introduce una cadena');
+        var inputCodificado = escape(input);
+        alert('Cadena codificada: ' + inputCodificado);
+        alert('Cadena decodificada: ' + unescape(input));
+    </script>
+</body>
+
+</html>

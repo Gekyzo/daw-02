@@ -11,3 +11,8 @@
 - [RegExr: Learn, Build, &amp; Test RegEx](https://regexr.com/)
 - [RegexOne - Learn Regular Expressions](https://regexone.com/)
 - [PHP: Posibles modificadores en patrones de expresiones regulares - Manual](https://www.php.net/manual/es/reference.pcre.pattern.modifiers.php)
+
+## Tema 3 - Storing information with databases
+
+- [PHP: PDO - Manual](https://www.php.net/manual/es/book.pdo.php)
+- [Introduction to PHP PDO](https://www.phpro.org/tutorials/Introduction-to-PHP-PDO.html)

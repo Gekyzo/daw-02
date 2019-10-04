@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Declaración del objeto
+        function imprimirDatos() {
+            document.write('Marca: ' + this.marca + '<br>');
+            document.write('Nombre: ' + this.nombre + '<br>');
+            document.write('Precio: ' + this.precio + '<br>');
+        }
+        function ProductoAlimenticio(codigo, nombre, precio) {
+            this.codigo = codigo;
+            this.nombre = nombre;
+            this.precio = precio;
+        }
+
+        // Instancias del objeto
+        var producto1 = new ProductoAlimenticio(14124, 'Manzanas', 35);
+        var producto2 = new ProductoAlimenticio(14124, 'Peras', 40);
+        var producto3 = new ProductoAlimenticio(12896, 'Melocotones', 50);
+
+        console.log(producto1.imprimirDatos());
+
+
+        // Array
+        var productos = [];
+
+        productos.push(producto1, producto2, producto3);
+        productos.map(imprimirDatos(producto));
+
+    </script>
+</body>
+
+</html>
