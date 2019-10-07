@@ -1,3 +1,11 @@
+<!--
+    A.3.3. Crear un script que defina un objeto llamado ProductoAlimenticio.
+    Este objeto debe presentar las propiedades código, nombre y precio, además del método imprimirDatos,
+    el cual escribe por pantalla los valores de sus propiedades.
+    Posteriormente, crear 3 instancias de este objeto y guárdelas en un array.
+    Con la ayuda de un bucle usar el método imprimirDatos para mostrar por pantalla los valores de los tres objetos.
+-->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -12,14 +20,17 @@
     <script>
         // Declaración del objeto
         function imprimirDatos() {
-            document.write('Marca: ' + this.marca + '<br>');
+            document.write('Código: ' + this.codigo + '<br>');
             document.write('Nombre: ' + this.nombre + '<br>');
             document.write('Precio: ' + this.precio + '<br>');
+            document.write('---------------');
+            document.write('<br>');
         }
         function ProductoAlimenticio(codigo, nombre, precio) {
             this.codigo = codigo;
             this.nombre = nombre;
             this.precio = precio;
+            this.imprimirDatos = imprimirDatos;
         }
 
         // Instancias del objeto
@@ -27,14 +38,13 @@
         var producto2 = new ProductoAlimenticio(14124, 'Peras', 40);
         var producto3 = new ProductoAlimenticio(12896, 'Melocotones', 50);
 
-        console.log(producto1.imprimirDatos());
-
-
         // Array
         var productos = [];
-
         productos.push(producto1, producto2, producto3);
-        productos.map(imprimirDatos(producto));
+
+        for (let i = 0; i < productos.length; i++) {
+            productos[i].imprimirDatos();
+        }
 
     </script>
 </body>

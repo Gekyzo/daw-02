@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var date = new Date(2019, 10, 3, 10, 26);
+        document.write(date + '<br>');
+
+        /**
+         * La función setHours establece el valor de las horas en una variable de tipo fecha.
+         * En este caso, al indicar 26 horas, el resultado será el día siguiente al original, a las 2.
+         */
+        date.setHours(26);
+        document.write(date + '<br>');
+
+        /**
+         * La función setMinutes establece el valor de los minutos en una variable de tipo fecha.
+         * En este acso, al indicar 65 horas, el resultado será una hora después de la original, con 5 minutos.
+         */
+        date.setMinutes(65);
+        document.write(date + '<br>');
+
+
+    </script>
+</body>
+
+</html>

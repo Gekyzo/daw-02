@@ -1,0 +1,25 @@
+<!-- A.3.5. Calcular el tiempo desde que se carga el documento hasta que el usuario pulsa un botón en la pantalla. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var inicio = new Date;
+        function tiempoCarga() {
+            var click = new Date;
+            document.getElementById('resultado').innerHTML = 'Has tardado ' + (click - inicio) + ' ms en hacer click en el botón';
+        }
+    </script>
+
+    <button onclick="tiempoCarga()">Click me!</button>
+    <p id="resultado"></p>
+</body>
+
+</html>

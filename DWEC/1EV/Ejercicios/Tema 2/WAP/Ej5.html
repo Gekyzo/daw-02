@@ -1,0 +1,24 @@
+<!-- Recorre un array denominado meses que contenga los meses del año del
+curso escolar. Debes mostrar la posición que ocupa cada mes junto con su
+valor en el array. Para ello utilizar el método Array.forEach -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
+        meses.forEach((mes, index) => {
+            console.log(index + ': ' + mes);
+        });
+    </script>
+</body>
+
+</html>

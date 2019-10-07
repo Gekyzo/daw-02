@@ -1,0 +1,41 @@
+<!-- Crear un bucle desde 1 a 1000 donde se muestre por consola tan sólo los
+números múltiplos de 6. -->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      // Método 1: for con incremento de 1
+      function forLoop() {
+        for (let index = 1; index <= 1000; index++) {
+          if (index % 6 === 0) {
+            console.log(index);
+          }
+        }
+      }
+
+      // Método 2: for con incremento de 6
+      function forLoopSix() {
+        for (var index = 6; index <= 1000; index += 6) {
+          console.log(index);
+        }
+      }
+
+      // Método 3: while
+      function whileLoop() {
+        var index = 6;
+        while (index <= 1000) {
+          console.log(index);
+          index += 6;
+        }
+      }
+    </script>
+  </body>
+</html>
