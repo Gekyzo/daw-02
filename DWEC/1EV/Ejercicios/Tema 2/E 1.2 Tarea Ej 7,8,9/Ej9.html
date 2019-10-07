@@ -1,0 +1,53 @@
+<!--
+Crea un script en el que al hacer clic sobre alguna de estas palabras: Manzana, Pera, Fresa, Nectarina, Kiwi, Mango, Frambuesa
+que aparecerán con aspecto de botón, nos haga introducir por el prompt de javascript el nombre que pone en el botón,
+lo recojamos en un array y nos muestre dicha palabra deletreada con sus posiciones del derecho y del revés.
+Nota: hacerlo con css. Puedes intentar crear efecto hover, al pasar el ratón.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      button {
+        color: white;
+        background-color: indianred;
+        border-radius: 20px;
+        padding: 10px 20px;
+        border: 1px solid black;
+      }
+      button:hover {
+        background-color: darkred;
+        transition: background-color 2s linear;
+      }
+    </style>
+  </head>
+
+  <body>
+    <button onclick="fruitName()">Manzana</button>
+    <button onclick="fruitName()">Pera</button>
+    <button onclick="fruitName()">Fresa</button>
+    <button onclick="fruitName()">Nectarina</button>
+    <button onclick="fruitName()">Kiwi</button>
+    <button onclick="fruitName()">Mango</button>
+    <button onclick="fruitName()">Frambuesa</button>
+
+    <p id="resultadoUno"></p>
+    <p id="resultadoDos"></p>
+
+    <script>
+      function fruitName() {
+        var fruit = prompt("Introduce el nombre de la fruta elegida:");
+        var fruitArray = fruit.split("");
+        document.getElementById("resultadoUno").innerHTML = fruitArray;
+        document.getElementById(
+          "resultadoDos"
+        ).innerHTML = fruitArray.reverse();
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,23 @@
+<!-- A.3.4. Calcular los milisegundos hasta su próximo cumpleaños y muéstralos por pantalla. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Método 1: Creando variables
+        var fechaActual = new Date;
+        var miCumpleaños = new Date(2020, 9, 23);
+        var diferencia = miCumpleaños - fechaActual;
+        document.write('Quedan ' + diferencia + ' ms hasta mi próximo cumpleaños.');
+    </script>
+
+</body>
+
+</html>

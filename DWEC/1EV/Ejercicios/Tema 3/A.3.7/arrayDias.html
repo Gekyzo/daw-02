@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dias = [
+            'Lunes',
+            'Martes',
+            'Miércoles',
+            'Jueves',
+            'Viernes',
+        ];
+        dias.length = dias.length + 2;
+        dias[dias.length - 2] = 'Sábado';
+        dias[dias.length - 1] = 'Domingo';
+
+        for (let i = 0; i < dias.length; i++) {
+            document.write(dias[i] + '<br>');
+        }
+    </script>
+</body>
+
+</html>
