@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var dias = [
+            'Lunes',
+            'Martes',
+            'Miércoles',
+            'Jueves',
+            'Viernes',
+            'Sábado',
+            'Domingo'
+        ];
+
+        // Método 1: slice
+        var diasLaborales = dias.slice(0, 5);
+        var diasFestivos = dias.slice(5);
+        document.write('Días laborales: ' + diasLaborales + '<br>');
+        document.write('Días festivos: ' + diasFestivos + '<br>');
+
+        // Método 2: splice
+        var diasLaborales2 = dias.splice(0, 5);
+        var diasFestivos2 = dias;
+        document.write('Días laborales: ' + diasLaborales2 + '<br>');
+        document.write('Días festivos: ' + diasFestivos2);
+
+    </script>
+</body>
+
+</html>

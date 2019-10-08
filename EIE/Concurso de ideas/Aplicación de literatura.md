@@ -35,8 +35,20 @@ También permitirá que los colegios o cualquier organización la utilicen como 
 
 ## Dónde me sitúo
 
+Se trata de una aplicación online, por lo que se puede acceder a ella desde cualquier dispositivo con conexión a internet.
+
 ## Competencia
+
+Actualmente existen algunos blogs que permiten publicar historias, pero mi idea consiste en expandir las posibilidades de la publicación. Programando la publicación de capítulos, permitiendo compartir capítulos de forma pública o privada, etc.
+
+Además, consiste en una red social mediante la cual puedes ser notificado cada vez que tus escritores preferidos publiquen una nueva historia.
 
 ## Clientes potenciales
 
+Cualquier persona interesada en el mundo de la literatura y la escritura. Desde potenciales escritores hasta ávidos lectores. Además, al tratarse también de una plataforma de lectura, cualquier entidad, colegio o empresa privada que quiera realizar un concurso o contar con una plataforma personalizada para comunicar un mensaje.
+
 ## Qué nos diferencia de los demás
+
+La aplicación está orientada principalmente al escritor, brindándole diferentes herramientas para que pueda organizar su catálogo de publicaciones a su gusto.
+
+Mediante la existencia de categorías, programador automático, y notificaciones para tus seguidores, será más fácil hacer llegar tu mensaje al público interesado.

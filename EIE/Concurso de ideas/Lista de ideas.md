@@ -1,5 +1,3 @@
-- Organizador de documentos personales. Imágenes, recordatorios cuando caduca la ITV...
-- Aplicación de literatura amateur y concursos para colegios
-- Aplicación para organizar apuntes y aula virtual para toda la clase
-- Alquiler de mascotas
+- lquiler de mascotas
 - Aplicación con ejercicios de Programación y tutoriales con plan de estudio (roadmap)
+
