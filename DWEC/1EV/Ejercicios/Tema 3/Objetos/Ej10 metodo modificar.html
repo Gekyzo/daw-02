@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        function person(firstName, lastName, age, eyeColor) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.eyeColor = eyeColor;
+            this.changeName = function (name) {
+                this.lastName = name;
+            }
+        }
+        var myMother = new person('Sally', 'Rally', 48, 'green');
+        myMother.changeName('Doe');
+        document.getElementById('demo').innerHTML = "My mother's last name is " + myMother.lastName;
+    </script>
+</body>
+
+</html>

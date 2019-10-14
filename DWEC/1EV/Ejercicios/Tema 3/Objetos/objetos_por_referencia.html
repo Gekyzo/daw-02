@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var person = { firstName: 'John', lastName: 'Doe', age: 50, eyeColor: 'blue' };
+        var x = person;
+        x.age = 18;
+        // La variable 'x' contiene la dirección en memoria de person, es decir, le apunta.
+        // Cualquier cambio que se le haga a 'x' se realiza también sobre 'person' y viceversa
+        document.getElementById('demo').innerHTML = person.firstName + ' is ' + person.age + ' years old.'
+        document.getElementById('demo').innerHTML = x.firstName + ' is ' + x.age + ' years old.'
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!-- Partiendo del siguiente array [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1],
+ordene sus valores de tal forma que ocupen las primeras posiciones los
+elementos pares. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numeros = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var numerosPares = [];
+        var numerosImpares = [];
+
+        // Reparto los números en un array par o impar
+        numeros.forEach(numero => {
+            if (numero % 2 === 0) {
+                numerosPares.push(numero);
+            } else {
+                numerosImpares.push(numero);
+            }
+        });
+
+        // Muestro los dos arrays, primero los pares y luego los impares
+        document.write(numerosPares + ',' + numerosImpares);
+
+    </script>
+
+</body>
+
+</html>

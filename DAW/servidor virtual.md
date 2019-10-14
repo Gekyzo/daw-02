@@ -1,0 +1,5 @@
+- Crear archivo der servidor en /etc/apache2/sites-available
+- Crear archivo  /etc/apache2/conf-available
+- Aplicar directiva apache2: a2ensite servidor1
+- Restart servicio apache2: systemctl reload apache2
+- Cambiar archivo hosts de Windows

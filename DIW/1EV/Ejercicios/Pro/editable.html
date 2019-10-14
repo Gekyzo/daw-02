@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #editable {
+            border: 4px solid black;
+            background: #f2f2f2;
+            width: 335px;
+            min-height: 200px;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            document.designMode = "on";
+        }
+
+        function negrita() {
+            document.execCommand('bold', false, null);
+        }
+
+        function cursiva() {
+            document.execCommand('italic', false, null);
+        }
+
+        function subrayado() {
+
+            document.execCommand('underline', false, null);
+        }
+
+        function hipervinculo() {
+            var direccion = prompt('Introduce la URL: ', 'http://');
+            document.execCommand('createlink', false, null);
+        }
+
+        function codigo() {
+            document.execCommand('bold', false, null);
+        }
+    </script>
+</head>
+
+<body>
+    <h2>Editor personalizado</h2>
+    <div>
+        <input type="button" value="Negrita" onclick="negrita()">
+        <input type="button" value="Cursiva" onclick="cursiva()">
+        <input type="button" value="Subrayado" onclick="subrayado()">
+        <input type="button" value="Hipervínculo" onclick="hipervinculo()">
+        <input type="button" value="Código" onclick="codigo()">
+    </div>
+
+    <div id="contenido" contenteditable="true"></div>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var txt = '';
+        var person = { fname: 'John', lname: 'Doe', age: 25 };
+        person.nationality = 'English';
+        var x;
+        for (x in person) {
+            txt += person[x] + ' ';
+        }
+        document.getElementById('demo').innerHTML = txt + person.nationality;
+    </script>
+</body>
+
+</html>

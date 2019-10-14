@@ -1,0 +1,28 @@
+<!-- Partiendo del siguiente array [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1], crear un nuevo array de elementos del array original sin repetir y ordenado. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numeros = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var numerosUnicos = [];
+
+        numeros.forEach(numero => {
+            if (!numerosUnicos.includes(numero)) {
+                numerosUnicos.push(numero);
+            }
+        });
+
+        document.write(numerosUnicos);
+
+    </script>
+</body>
+
+</html>

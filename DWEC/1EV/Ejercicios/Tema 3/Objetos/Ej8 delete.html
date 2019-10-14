@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var person = {
+            firstname: 'John',
+            lastname: 'Doe',
+            age: 50,
+            eyecolor: 'blue'
+        };
+
+        // 'delete' sólo es para propiedades de objeto, no para variables ni funciones.
+        delete person.age;
+
+        document.getElementById('demo').innerHTML = person.firstname + ' is ' + person.age + ' years old.'
+    </script>
+</body>
+
+</html>

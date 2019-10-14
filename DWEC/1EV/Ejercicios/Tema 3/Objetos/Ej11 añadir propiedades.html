@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        function person(firstName, lastName, age, eyeColor) {
+            this.firstName = firstName;
+            this.lastName = lastName;
+            this.age = age;
+            this.eyeColor = eyeColor;
+
+        }
+
+        var myFather = new person('John', 'Doe', 50, 'blue');
+        var myMother = new person('Sally', 'Rally', 48, 'green');
+
+        // Añado una propiedad sólo a myFather
+        myFather.nationality = 'English';
+        document.getElementById('demo').innerHTML = 'My father is ' + myFather.nationality;
+
+        // Añado un método sólo a myFather
+        myfather.name = function () {
+            return this.firstName + ' ' + this.lastName;
+        }
+        document.getElementById('demo').innerHTML = 'My father is FULL' + myFather.name();
+
+    </script>
+</body>
+
+</html>

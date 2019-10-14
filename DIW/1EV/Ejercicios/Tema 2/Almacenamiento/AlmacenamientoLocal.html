@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejemplo sessionStorage</title>
+    <style>
+        #listado,
+        #botones {
+            border: 2px solid black;
+            width: 414px;
+            margin: 5px auto;
+        }
+
+        #listado {
+            min-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="botones">
+        <input type="text" id="elemento">
+        <input type="button" value="Guardar" onclick="almacenar()">
+
+        <input type="number" value="0" id="verEl">
+        <input type="button" value="Ver elemento" onclick="verElemento()">
+        <input type="button" value="Ver listado" onclick="ver()">
+
+        <input type="number" value="0" id="borrEl">
+        <input type="button" value="Borrar elemento" onclick="borrarElemento()">
+        <input type="button" value="Borrar listado" onclick="borrar()">
+    </div>
+
+    <div id="listado"></div>
+
+    <script>
+        var cantidad = sessionStorage.length;
+
+        function almacenar() {
+            var contenido = document.getElementById('elemento').value;
+            sessionStorage.setItem('Elemento' + cantidad, contenido);
+            cantidad++;
+        }
+
+        function verElemento() {
+            var posicion = document.getElementById('verEl').value;
+            var clave = sessionStorage.key(posicion);
+            var dato = sessionStorage.getItem(clave);
+            document.getElementById('listado').innerHTML = clave + ' = ' + dato;
+        }
+
+        function ver() {
+            var cont = sessionStorage.length;
+            document.getElementById('listado').innerHTML = '';
+            for (let i = 0; i < cont; i++) {
+                var clave = sessionStorage.key(i);
+                var dato = sessionStorage.getItem(clave);
+                document.getElementById('listado').innerHTML += clave + ' - ' + dato + '<br>';
+            }
+        }
+
+        function borrarElemento() {
+            var posicion = document.getElementById('borrEl').value;
+            var clave = sessionStorage.key(posicion);
+            var dato = sessionStorage.removeItem(clave);
+        }
+
+        function borrar() {
+            sessionStorage.clear();
+        }
+    </script>
+
+</body>
+
+</html>

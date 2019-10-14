@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo1"></p>
+    <p id="demo2"></p>
+    <script>
+        // Creación objeto con propiedades y método
+        var person = {
+            firstName: 'John',
+            lastName: 'Doe',
+            age: 50,
+            eyeColor: 'blue',
+            fullName: function () {
+                return this.firstName + ' ' + this.lastName;
+            }
+        }
+
+        // Manejar propiedades del objeto directamente
+        document.getElementById('demo1').innerHTML = person.firstName + ' ' + person.lastName + '<br>';
+        // Manejar a través de un método las propiedades básicas de un objeto
+        document.getElementById('demo2').innerHTML = person.fullName() + '<br>';
+    </script>
+</body>
+
+</html>

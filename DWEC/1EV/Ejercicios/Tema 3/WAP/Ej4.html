@@ -1,0 +1,38 @@
+<!-- Partiendo del siguiente array [4,0,3,4,7,3,5,8,1,8,8,0,2,3,1,2,5,7,3,2,5,1],
+identifique las posiciones ocupadas por el valor 3 sin necesidad de recorrer todos los elementos. -->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var numeros = [4, 0, 3, 4, 7, 3, 5, 8, 1, 8, 8, 0, 2, 3, 1, 2, 5, 7, 3, 2, 5, 1];
+        var buscarNumero = 3;
+        var posiciones = [];
+        var ultimaPos = 0;
+
+        while (numeros.indexOf(buscarNumero) != -1) {
+            ultimaPos += numeros.indexOf(buscarNumero);
+            posiciones.push(ultimaPos);
+
+            numeros = numeros.splice(numeros.indexOf(buscarNumero) + 1);
+
+            ultimaPos++;
+        }
+
+        document.write('Posiciones en las que sale el ' + buscarNumero + ': ');
+        posiciones.forEach(element => {
+            document.write(element + '|');
+        })
+
+    </script>
+
+</body>
+
+</html>
