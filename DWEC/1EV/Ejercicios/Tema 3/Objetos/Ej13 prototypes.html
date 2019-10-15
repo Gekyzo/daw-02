@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        function Person(first, last, age, eye) {
+            this.firstName = first;
+            this.lastName = last;
+            this.age = age;
+            this.eyeColor = eye;
+        }
+        Person.prototype.nationality = 'English';
+        Person.prototype.name_nation = function () {
+            return this.firstName + ' ' + this.lastName + ' ' + this.nationality;
+        };
+        Person.prototype.changename = function () {
+            this.firstName = prompt('Introduce un nuevo nombre:');
+            return this.firstName + ' ' + this.lastName;
+        }
+        var myFather = new Person('John', 'Doe', 50, 'blue');
+        document.getElementById('demo').innerHTML = 'My father is ' + myFather.changename() + myFather.nationality;
+
+        var myMother = new Person('Pepa', 'Doe', 50, 'blue');
+        document.getElementById('demo').innerHTML += 'My mother is ' + myMother.name_nation();
+    </script>
+</body>
+
+</html>
