@@ -1,0 +1,37 @@
+<!-- Crear una expresión regular que permita reemplazar el símbolo dólar ($), por
+el símbolo euro, €, en las cantidades que indiquen un valor monetario. Por
+ejemplo: “El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.”
+“El coste del equipo es de 90.25€ iva incluido. Se aceptan $ y €.”. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function cambiarMoneda(str) {
+            var patron = /(?<=[0-9])[\$]/g;
+            exprReg = new RegExp(patron);
+            if (str.match(exprReg)) {
+                console.log(str.replace(exprReg, '€'));
+            }
+        }
+
+        // Válidos
+        cambiarMoneda('El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.');
+        cambiarMoneda('El coste del artículo sin IVA es 90.25$, y con IVA 115.65$. Se aceptan $ y €.');
+
+        // Inválidos
+        cambiarMoneda('El coste del equipo es de 90.25$$ iva incluido. Se aceptan $ y €.');
+        cambiarMoneda('El coste del artículo sin IVA es 90.25$$, y con IVA 115.65$. Se aceptan $ y €.');
+
+    </script>
+</body>
+
+</html>

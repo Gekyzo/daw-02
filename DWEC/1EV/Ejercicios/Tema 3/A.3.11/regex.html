@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function validarCorreo(correo) {
+            patron = /^[a-z]+@{1}[a-z]+\.[a-z]{3}$/;
+            exprReg = new RegExp(patron);
+            if (correo.match(exprReg)) {
+                console.log('Correo válido');
+            } else {
+                console.log('Correo con formato incorrecto');
+            }
+        }
+
+        function validarCorreoDos(correo) {
+            patron = /^[a-z0-9_]+@{1}[a-z]+\.[a-z]{2,4}$/i;
+            exprReg = new RegExp(patron);
+            if (correo.match(exprReg)) {
+                console.log('Correo válido');
+            } else {
+                console.log('Correo con formato incorrecto');
+            }
+        }
+
+        function validarCorreoTres(correo) {
+            patron = /^[a-z]{1}[a-z0-9(_?)]+@gmail+\.[a-z]{2,4}$/;
+            exprReg = new RegExp(patron);
+            if (correo.match(exprReg)) {
+                console.log('Correo válido');
+            } else {
+                console.log('Correo con formato incorrecto');
+            }
+        }
+
+        validarCorreo('micorreo@gmail.com');
+        validarCorreo('micorreo-gmail.com');
+        validarCorreo('micorreo@yahoo.es');
+        validarCorreo('micorreo@gmail.com@yahoo.es');
+        validarCorreoDos('micorreo@gmail.com');
+        validarCorreoDos('micorreo-gmail.com');
+        validarCorreoDos('micorreo_gmail.com');
+        validarCorreoDos('micorreo@yahoo.es');
+        validarCorreoDos('micorreo@yahoo.neto');
+        validarCorreoDos('micorreo@gmail.com@yahoo.es');
+        validarCorreoDos('MICORREO@YAHOO.ES');
+        validarCorreoTres('micorreo@gmail.com');
+        validarCorreoTres('0micorreo@gmail.com');
+        validarCorreoTres('micorreo123@gmail.com');
+        validarCorreoTres('m0icorreo123@gmail.com');
+        validarCorreoTres('m0icorreo123_@gmail.com');
+        validarCorreoTres('m0icorreo123__@gmail.com');
+    </script>
+</body>
+
+</html>

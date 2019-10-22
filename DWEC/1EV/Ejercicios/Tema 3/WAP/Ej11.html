@@ -1,0 +1,41 @@
+<!-- Crear una expresión regular que permita identificar si un número de teléfono
+cumple con el formato establecido: 943-852-978, 943 852 978 o 943852978 -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function regEx(test) {
+            var patron = /^([0-9]{3}[- ]?){2}[0-9]{3}$/;
+            exprReg = new RegExp(patron);
+            if (test.match(exprReg)) {
+                console.log('Test válido');
+            } else {
+                console.log('Test inválido');
+            }
+        }
+        // Válidos
+        regEx('943-852-978');
+        regEx('943 852 978');
+        regEx('943852978');
+
+        // Inválidos
+        regEx('9438529780');
+        regEx('943 852 9780');
+        regEx('943-852-9780');
+
+        regEx('94385280');
+        regEx('943 852 80');
+        regEx('943-852-80');
+    </script>
+</body>
+
+</html>
