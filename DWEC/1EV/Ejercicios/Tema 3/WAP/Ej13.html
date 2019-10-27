@@ -1,0 +1,44 @@
+<!-- Definir una expresión regular que valide el número de matrícula del alumno,
+    el cual presenta las siguientes características: el número de matricula está compuesto por 5 dígitos y una letra;
+    el grupo de cinco dígitos comienza siempre por un número impar y la letra puede ser tanto P como S,
+    para diferenciar el nivel de estudios. Ej.: 14456S, 33334P, 56229S, etc. -->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function validarMatricula(str) {
+            var patron = /^[1|3|5|7|9][0-9]{4}[psPS]$/;
+            exprReg = new RegExp(patron);
+            let message = 'La matrícula [' + str + '] es ';
+            if (str.match(exprReg)) {
+                message += 'válida.';
+            } else {
+                message += 'inválida.';
+            }
+            console.log(message);
+
+        }
+        // Matrículas válidas
+        validarMatricula('14456S');
+        validarMatricula('33334P');
+        validarMatricula('56229S');
+
+        // Matrículas inválidas
+        validarMatricula('26229S'); // No comienza con número impar
+        validarMatricula('16229A'); // No termina en 'P' o 'S'
+        validarMatricula('162296P'); // Tiene más de 5 dígitos
+        validarMatricula('1622P'); // Tiene menos de 5 dígitos
+
+    </script>
+</body>
+
+</html>

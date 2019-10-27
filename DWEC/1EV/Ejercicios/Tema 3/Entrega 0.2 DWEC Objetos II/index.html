@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Alumno(firstName) {
+            this.firstName = firstName
+            this.decirSaludo = function () {
+                console.log('Hola soy ' + this.firstName);
+            },
+                this.caminar = function () {
+                    console.log('Estoy caminando');
+                }
+        }
+        var AlumnoA = new Alumno('Pepe');
+        var AlumnoB = new Alumno('Ana');
+        AlumnoEso.prototype = Object.create(Alumno.prototype);
+    </script>
+</body>
+
+</html>
