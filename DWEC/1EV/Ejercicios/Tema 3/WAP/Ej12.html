@@ -16,7 +16,8 @@ ejemplo: “El coste del equipo es de 90.25$ iva incluido. Se aceptan $ y €.�
 <body>
     <script>
         function cambiarMoneda(str) {
-            var patron = /(?<=[0-9])[\$]/g;
+            var patron = /(?<=\d)\$/g;
+            // var patron = /[0-9]+.?[0-9]*\$/g;
             exprReg = new RegExp(patron);
             if (str.match(exprReg)) {
                 console.log(str.replace(exprReg, '€'));

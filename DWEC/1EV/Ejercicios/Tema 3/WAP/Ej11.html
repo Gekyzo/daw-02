@@ -14,7 +14,8 @@ cumple con el formato establecido: 943-852-978, 943 852 978 o 943852978 -->
 <body>
     <script>
         function regEx(test) {
-            var patron = /^([0-9]{3}[- ]?){3}$/;
+            var patron = /([\s -]\d){2}\d/;
+            // var patron = /^([0-9]{3}[- ]?){3}$/;
             // var patron = /^([0-9]{3}(-|\s)?){3}  /;
             exprReg = new RegExp(patron);
             if (test.match(exprReg)) {

@@ -1,3 +1,12 @@
+<!--
+Crea un prototipo llamado Alumno que tenga las siguientes propiedades y métodos:
+    · Propiedades:
+        firstName
+    · Añade a través de la propiedad prototype, los métodos:
+        · decirSaludo: función que debe mostrar por consola el log “Hola soy XXX”.
+    · caminar: función que debe mostrar por consola el log “Estoy caminando”.
+-->
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,18 +19,75 @@
 
 <body>
     <script>
-        function Alumno(firstName) {
-            this.firstName = firstName
-            this.decirSaludo = function () {
-                console.log('Hola soy ' + this.firstName);
-            },
-                this.caminar = function () {
-                    console.log('Estoy caminando');
-                }
+        var Alumno = function (firstName) {
+            this.firstName = firstName,
+                decirSaludo = function () {
+                    console.log("Hola soy " + this.firstName);
+                },
+                caminar = function () {
+                    console.log("Estoy caminando.");
+                };
         }
-        var AlumnoA = new Alumno('Pepe');
-        var AlumnoB = new Alumno('Ana');
+
+        /* 1 - Crea dos instancias alumnoA y alumnoB del prototipo Alumno, con los
+        nombres “Pepe” y “Ana” */
+        var AlumnoA = new Alumno("Pepe");
+        var AlumnoB = new Alumno("Ana");
+
+        /* 2 - Define el constructor AlumnoEso (firstName, subject):
+        · Debe llamar al constructor padre Alumno, con el método call, pasándole cómo parámetro this y firstName.
+        · Tiene una propiedad subject, que se cargará con el parámetro subject. */
+        function AlumnoEso(firstName, subject) {
+            Alumno.call(this, firstName);
+            this.subject = subject;
+        }
+
+        /* 3 - Utiliza esta instrucción para que la propiedad prototype de AlumnoEso sea cargada con el objeto creado a partir del prototipo de Alumno. */
         AlumnoEso.prototype = Object.create(Alumno.prototype);
+
+        /* 4 - Utiliza esta instrucción para que la propiedad constructor de AlumnoEso.prototype sea cargada con AlumnoEso. */
+        AlumnoEso.prototype.constructor = AlumnoEso;
+
+        /* 4.1 - ¿Qué hace esta instrucción? */
+        // Hace que el constructor del prototipo sea la función AlumnoEso.
+
+        /* 4.2 - ¿Cómo es la asignación? */
+        // La asignación es por valor, porque al constructor le pasamos el nombre de la función AlumnoEso.
+
+        AlumnoEso.prototype.decirSaludo = function () {
+            console.log("Hola soy " + this.firstName + " y estudio " + this.subject);
+        };
+        /* 5 - ¿Cambia el método decirSaludo de Alumno? */
+        // No. El método decirSaludo de Alumno no se ha modificado porque hemos indicado el prototipo de AlumnoEso
+
+        /* 6 - Añade el método decirAdios a AlumnoEso, mostrando un log por consola que
+        diga “Adiós”. */
+        AlumnoEso.prototype.decirAdios = function () {
+            console.log("Adiós");
+        };
+
+        /* 7 - Crea una variable alumno1 que sea AlumnoEso(“Juan”,”Matemáticas”) */
+        var alumno1 = new AlumnoEso("Juan", "Matemáticas");
+
+        /* 8 - Llama con alumno1 a los siguientes métodos: */
+        alumno1.decirSaludo();
+        alumno1.caminar();
+        alumno1.decirAdios();
+
+        /* 9 - Crea una variable alumno2 que sea Alumno(“Pedro”); Llama con alumno2 a los siguientes métodos: */
+        var alumno2 = new Alumno("Pedro");
+        alumno2.decirSaludo();
+        alumno2.caminar();
+        // alumno2.decirAdios();
+
+        /* 10 - ¿Qué observas¿?Es correcto? */
+        // alumno2.decirAdios() lanza un error, porque Alumno no tiene esa función.
+
+        /* 11 - Comprueba con Console.log (alumno1 instanceof Alumno) si es correcto el valor que devuelve. Console.log (alumno1 instanceof AlumnoEso) si es correcto el valor que devuelve.*/
+        console.log(alumno1 instanceof Alumno);
+        console.log(alumno1 instanceof AlumnoEso);
+        console.log(alumno2 instanceof Alumno);
+        console.log(alumno2 instanceof AlumnoEso);
     </script>
 </body>
 
