@@ -1,0 +1,45 @@
+<!--
+    Desde el documento principal, abre una ventana vacía en tu navegador.
+    Dicha ventana deberá tener un ancho de 300 pixeles y una altura de 200 pixeles.
+    Después crea un método llamado desplazarVentana() que desplace la nueva ventana de forma aleatoria.
+    En dicho método debes imprimir las nuevas coordenadas generadas.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="openWin()">Abrir ventana</button>
+    <button onclick="moveWin()">Mover Ventana</button>
+
+    <script>
+        var myWindow;
+
+        var num1 = Math.random() * 1000;
+        var num2 = Math.random() * 1000;
+
+        function openWin() {
+            myWindow = window.open('', 'myWindow', 'width=300, height=200');
+            myWindow.document.write(num1 + ' ' + num2);
+        }
+
+        function moveWin() {
+            while (true) {
+                var num1 = Math.random() * 1000;
+                var num2 = Math.random() * 1000;
+                myWindow.moveTo(num1, num2);
+                myWindow.focus();
+            }
+        }
+
+    </script>
+</body>
+
+</html>

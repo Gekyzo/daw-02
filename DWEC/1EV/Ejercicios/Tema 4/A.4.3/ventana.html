@@ -1,0 +1,32 @@
+<!--
+    En un documento HTML crea un botón que al presionarlo que al presionarlo abra una nueva ventana (100x100). Crea otro botón para redimensionar dicha ventana mediante resizeTo(500,500).
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+    <button onclick="cambiarTamaño()">Cambiar tamaño de la ventana</button>
+    <script>
+        var myWindow;
+
+        function abrirVentana() {
+            myWindow = window.open('', '', 'width=100, height=100');
+        }
+
+        function cambiarTamaño() {
+            myWindow.resizeTo(500, 500);
+            myWindow.focus();
+        }
+    </script>
+</body>
+
+</html>
