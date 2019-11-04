@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="ventana"></p>
+
+    <script>
+        // PROPIEDADES BÁSICAS DE WINDOW
+        window.name = 'Mi ventana';
+        var text = '';
+
+        text += '<br>Nombre: ' + window.name;
+        text += '<br>Ancho externo: ' + window.outerWidth;
+
+        text += '<br>Alto externo: ' + window.outerHeight;
+        text += '<br>Ancho interno: ' + window.innerWidth;
+
+        text += '<br>Alto interno: ' + window.innerHeight;
+        text += '<br>Alto externo: ' + window.outerHeight;
+
+        text += '<br>Scroll horizontal: ' + window.pageXOffset;
+        text += '<br>Scroll vertical: ' + window.pageYOffset;
+
+        text += '<br>Distancia desde la izquierda: ' + window.screenX;
+        text += '<br>Distancia desde arriba: ' + window.screenY;
+
+        document.getElementById('ventana').innerHTML = text;
+
+        // MÉTODOS DE WINDOW MÁS IMPORTANTES
+        var miVentana;
+
+        function crearVentana() {
+            miVentana = window.open('', '', 'width=500', 'height=200');
+            miVentana.document.write('<h1>Mi ventana</h1>')
+        }
+
+        function cerrarVentana() {
+            miVentana.close();
+        }
+
+        function redimensionarVentana() {
+            miVentana.resizeBy(10, 10);
+        }
+
+        function moverVentana() {
+            miVentana.moveBy(10, 10);
+        }
+
+        function enfocarVentana() {
+            miVentana.focus();
+        }
+
+        function imprimirVentana() {
+            miVentana.print();
+        }
+
+    </script>
+
+    <button onclick="crearVentana()">Crear ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="redimensionarVentana()">Redimensionar ventana</button>
+    <button onclick="moverVentana()">Mover ventana</button>
+    <button onclick="enfocarVentana()">Enfocar ventana</button>
+    <button onclick="imprimirVentana()">Imprimir ventana</button>
+
+</body>
+
+</html>

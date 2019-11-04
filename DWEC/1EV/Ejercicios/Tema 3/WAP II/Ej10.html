@@ -1,0 +1,60 @@
+<!--
+    Definir una función que muestre información sobre una cadena de texto que se le pasa como argumento.
+    A partir de la cadena que se le pasa, la función determina si esa cadena está formada sólo por mayúsculas,
+    sólo por minúsculas o por una mezcla de ambas.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function checkCase(str) {
+            str = str.trim();
+            let mayusculas = /^[A-Z|\n]+$/;
+            let minusculas = /^[a-z|\n]+$/;
+            let RegExpMayus = new RegExp(mayusculas);
+            let RegExpMinus = new RegExp(minusculas);
+
+            if (!str) {
+                console.log(`La cadena '${str}' está vacía`);
+                return;
+            }
+
+            if (str.match(RegExpMayus)) {
+                console.log(`La cadena '${str}' está formada por MAYÚSCULAS`);
+                return;
+            }
+
+            if (str.match(RegExpMinus)) {
+                console.log(`La cadena '${str}' está formada por MINÚSCULAS`);
+                return;
+            }
+
+            console.log(`La cadena '${str}' contiene mayúsculas y minúsculas`);
+            return;
+        }
+
+        // Tests
+        checkCase('holaquetal');
+        checkCase('HOLAQUETAL');
+        checkCase('HoLaQuEtAl');
+        checkCase('hola que tal');
+        checkCase('HOLA QUE TAL');
+        checkCase('HoLa QuE tAl');
+        checkCase('     ');
+
+    </script>
+
+</body>
+
+</html>
