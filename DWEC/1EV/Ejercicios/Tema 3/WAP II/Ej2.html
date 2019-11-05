@@ -1,0 +1,54 @@
+<!--
+Hacer un simple ejercicio html, en el que se llame a 4 funciones desde un botón, para conseguir:
+a. Abrir una nueva localización
+b. Actualizar la página
+c. Abrir una nueva ventana
+d. Arrancar un temporizador cada 2 segundos que nos muestre la hora que es
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function realizar() {
+            window.location = 'http://google.es';
+        }
+
+        function actualizar() {
+            location.reload();
+        }
+
+        function abrir() {
+            open('http://google.es');
+        }
+
+        function temporizador() {
+            document.getElementById('iniciar').disabled = true;
+            setInterval(() => {
+                var hoy = new Date();
+                var tiempo = hoy.toLocaleString();
+                // alert(tiempo);
+                document.getElementById('temp').value = tiempo;
+            }, 2000);
+        }
+    </script>
+
+    <button onclick="realizar()">Realizar</button>
+    <button onclick="actualizar()">Actualizar</button>
+    <button onclick="abrir()">Abrir</button>
+    <button onclick="temporizador()" id="iniciar">Temporizador</button>
+
+    <input type="text" id="temp" disabled>
+
+</body>
+
+</html>

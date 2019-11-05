@@ -1,0 +1,47 @@
+<!--
+Realizar un programa html con javascript, en el que se establezca un intervalo de tiempo de 1 segundo para llamar a una función incrementa que sume
+segundos. Hacer un botón en el que al hacer clic se cancele la ejecución de ese contador y nos muestre por pantalla cuántos segundos han transcurrido
+hasta que hemos hecho clic en el botón.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="reloj" disabled>
+    <button id="btnParar" onclick="stop()">Stop</button>
+    <div id="total_segundos"></div>
+
+    <script>
+        // var intervalo = setInterval(reloj, 1000);
+
+        // var segundos = 0;
+
+        // function reloj() {
+        //     var d = new Date();
+        //     var t = d.toLocaleTimeString();
+        //     document.getElementById('reloj').value = t;
+        //     segundos++;
+        // }
+
+        // function stop() {
+        //     window.setInterval(intervalo);
+        //     document.getElementById('total_segundos').innerHTML = `<br>Has tardado ${segundos}  segundos en parar el temporizador`;
+        // }
+        function showSeconds() {
+            var d = new Date();
+            console.log(d.getSeconds());
+        };
+    </script>
+
+</body>
+
+</html>

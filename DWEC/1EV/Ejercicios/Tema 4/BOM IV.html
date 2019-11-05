@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="reloj"></p>
+    <script>
+        function saludar() {
+            alert('¡Hola!');
+        }
+
+        var int = setInterval(reloj, 1000);
+
+        function reloj() {
+            var fecha = new Date();
+            document.getElementById('reloj').innerHTML = fecha.getSeconds();
+        }
+    </script>
+    <button onclick="setTimeout(saludar, 3000)">Saluda</button>
+    <button onclick="sal = setTimeout(saludar, 3000)">Saluda con variable</button>
+    <button onclick="clearTimeout(sal)">Cancela saludo</button>
+    <button onclick="clearTimeout(int)">Cancela reloj</button>
+
+    <button onclick="acciones()"></button>
+</body>
+
+</html>
