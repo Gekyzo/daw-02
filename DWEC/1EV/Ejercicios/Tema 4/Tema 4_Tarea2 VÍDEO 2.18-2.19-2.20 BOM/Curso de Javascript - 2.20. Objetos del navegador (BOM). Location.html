@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="location"></p>
+
+    <script>
+
+        var text = '';
+
+        text += '<br>Href: ' + location.href;
+        text += '<br>Hostname: ' + location.hostname;
+        text += '<br>Pathname: ' + location.pathname;
+        text += '<br>Protocol: ' + location.protocol;
+        text += '<br>Hash: ' + location.hash;
+        text += '<br>Host: ' + location.host;
+        text += '<br>Origin: ' + location.origin;
+        text += '<br>Search: ' + location.search;
+
+        document.getElementById('location').innerHTML = text;
+
+        function nuevoDocumento() {
+            location.assign('http://www.google.com');
+        }
+
+        function recarga() {
+            location.reload();
+        }
+
+        function sustituye() {
+            location.replace('http://www.google.com');
+        }
+
+    </script>
+
+    <button onclick="nuevoDocumento()">Carga un nuevo documento</button>
+    <button onclick="recarga()">Recarga la página</button>
+    <button onclick="sustituye()">Sustituye la página</button>
+
+</body>
+
+</html>

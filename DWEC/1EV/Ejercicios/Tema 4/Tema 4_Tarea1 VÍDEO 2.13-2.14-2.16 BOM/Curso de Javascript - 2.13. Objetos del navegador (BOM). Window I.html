@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="ventana"></p>
+
+    <script>
+
+        window.name = 'Mi ventana';
+
+        var text = '';
+
+        text += '<br>Nombre: ' + window.name;
+
+        text += '<br>Ancho externo: ' + window.outerWidth;
+        text += '<br>Alto externo: ' + window.outerHeight;
+
+        text += '<br>Ancho interno: ' + window.innerWidth;
+        text += '<br>Ancho externo: ' + window.innerHeight;
+
+        text += '<br>Scroll horizontal: ' + window.pageXOffset;
+        text += '<br>Scroll vertical: ' + window.pageYOffset;
+
+        text += '<br>Distancia desde la izquierda: ' + window.screenX;
+        text += '<br>Distancia desde arriba: ' + window.screenY;
+
+        document.getElementById('ventana').innerHTML = text;
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!--
+    Modifica el color del texto del documento. Selecciona el color deseado a partir de un desplegable
+    que contenga los valores permitidos. Parte de lo siguiente:
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function modificarColor() {
+            var parrafos = document.getElementsByTagName('p');
+            for (var i = 0; i < parrafos.length; i++) {
+                parrafos[i].style.color = document.getElementById('cboSize').value;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div id="elementosTag">
+        <h3>Modificaciones de color</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro perspiciatis dolor recusandae sit, debitis
+            suscipit vero ipsa expedita maxime laborum ea beatae ratione impedit eligendi labore voluptatem? Voluptates,
+            deleniti provident?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ducimus velit, quaerat repudiandae cupiditate
+            reprehenderit sapiente quas, delectus perferendis autem nobis fugit non sunt ipsam officiis? Modi ullam
+            totam dolorem?
+        </p>
+    </div>
+    <div>
+        <span>Seleccionar color:</span>
+        <select id="cboSize">
+            <option value="green">Verde</option>
+            <option value="blue">Azul</option>
+            <option value="red">Rojo</option>
+        </select>
+        <button id="actualizar" onclick="modificarColor()">Cambiar</button>
+    </div>
+
+</body>
+
+</html>

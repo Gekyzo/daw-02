@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.tienda {
+  background-color: skyblue;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#products_table {
+  background-color: powderblue;
+  margin: auto;
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+h1,
+th {
+  text-transform: uppercase;
+}
+
+h1 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+#summary {
+  margin-top: 1rem;
+}
+
+#summary_table tr th {
+  padding: 1rem;
+}
+
+#summary_amount {
+  border: 1px solid red;
+}
+
+/*# sourceMappingURL=main.css.map */

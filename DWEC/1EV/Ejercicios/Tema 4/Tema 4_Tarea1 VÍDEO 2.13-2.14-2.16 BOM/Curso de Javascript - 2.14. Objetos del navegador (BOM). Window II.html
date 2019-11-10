@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var miVentana;
+
+        function crearVentana() {
+            miVentana = window.open('http://www.google.com');
+        }
+
+        function cerrarVentana() {
+            miVentana.close();
+        }
+
+        function redimensionarVentana() {
+            miVentana.resizeBy(10, 10);
+        }
+
+        function moverVentana() {
+            miVentana.moveBy(10, 10);
+        }
+
+        function enfocar() {
+            miVentana.focus();
+        }
+
+        function imprimir() {
+            print();
+        }
+
+    </script>
+
+    <button onclick="crearVentana()">Crear ventana</button>
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+    <button onclick="redimensionarVentana()">Redimensionar ventana</button>
+    <button onclick="moverVentana()">Mover ventana</button>
+    <button onclick="enfocar()">Enfocar ventana</button>
+    <button onclick="print()">Imprimir ventana</button>
+
+</body>
+
+</html>

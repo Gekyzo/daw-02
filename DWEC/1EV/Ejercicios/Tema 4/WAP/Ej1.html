@@ -1,0 +1,27 @@
+<!-- 
+    Crear un script que recoja el valor de la anchura y la altura total de la pantalla del usuario y calcule su diagonal
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        (function calcularDiagonal() {
+            let anchura = window.outerWidth;
+            let altura = window.outerHeight;
+            let diagonal = Math.floor(Math.sqrt(Math.pow(anchura, 2) + Math.pow(altura, 2)), 2);
+            document.write(`La diagonal de la pantalla con anchura ${anchura}px y altura ${altura}px es ${diagonal}px`);
+        })();
+    </script>
+
+</body>
+
+</html>

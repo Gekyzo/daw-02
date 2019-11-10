@@ -1,0 +1,46 @@
+<!--
+    Este ejercicio consiste en añadir de forma dinámica elementos al DOM.
+    Crear una lista en el documento y añadir nuevos elementos en esta al pulsar el botón
+    de la página con el texto escrito en la caja de texto. Parte de lo siguiente:
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="elementosTag">
+
+        <h3>Lista dinámica:</h3>
+        <ul></ul>
+        <hr>
+
+        <div>
+            <span>Nuevo Texto</span>
+            <input type="text" id="txt">
+            <button id="actualizar" onclick="addItemsLista()">Añadir</button>
+        </div>
+
+    </div>
+
+    <script>
+
+        function addItemsLista() {
+            var elementoLi = document.createElement('li')
+            var textoLi = document.createTextNode(document.getElementById('txt').value);
+            elementoLi.appendChild(textoLi);
+            document.getElementsByTagName('ul')[0].appendChild(elementoLi);
+        }
+
+    </script>
+
+</body>
+
+</html>

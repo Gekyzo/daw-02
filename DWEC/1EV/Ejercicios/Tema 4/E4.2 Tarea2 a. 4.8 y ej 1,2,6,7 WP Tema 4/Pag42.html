@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function verAtributos() {
+            alert(document.getElementById('imgIzquierda').src);
+        }
+    </script>
+</body>
+<img src="imagen1.png" id="imgIzquierda" alt="Imagen ejemplo izquierda">
+<br>
+<img src="imagen2.png" id="imgDerecha" alt="Imagen ejemplo derecha">
+<br>
+<hr>
+<button type="button" onclick="verAtributos()">Ver src de la primera imagen</button>
+
+</html>

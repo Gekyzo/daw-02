@@ -1,0 +1,40 @@
+<!--
+    Mediante la modificación de la propiedad style del elemento HTML oculta y muestra elementos HTML de la página.
+    El texto del botón debe variar de “Ocultar” a “Mostrar”. Parte de lo siguiente:
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function mostrar(button) {
+            if (button.innerHTML == 'Ocultar') {
+                button.innerHTML = 'Cambiar';
+                document.getElementById('txtColor').style.display = 'none';
+            } else {
+                button.innerHTML = 'Ocultar';
+                document.getElementById('txtColor').style.display = 'inline-block';
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div id="elementosTag">
+        <h3>Modificación propiedades CSS</h3>
+        <div>
+            <span>Caja de texto</span>
+            <input type="text" id="txtColor">
+            <button id="actualizar" onclick="mostrar(this)">Ocultar</button>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,15 @@
+<!-- 
+    P: ¿Qué hace el siguiente código?
+    R: Bindea la función 'cargaDOM()' al evento 'readystatechange'.
+    La función 'cargaDOM()' muestra un mensaje de alerta mientras el documento se esté cargando, y muestra otro mensaje con el texto 'Documento cargado', cuando se completa la carga de la página.
+-->
+<script>
+    document.addEventListener('readystatechange', cargaDOM, false);
+    function cargaDOM(evento) {
+        if (document.readyState == 'complete') {
+            alert('Documento cargado');
+        } else {
+            alert('Cargando...' + document.readyState);
+        }
+    }
+</script>
