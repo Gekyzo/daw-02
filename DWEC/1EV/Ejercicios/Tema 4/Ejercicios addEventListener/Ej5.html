@@ -1,0 +1,44 @@
+<!--
+
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="myDIV">This div element has an onmousemove event handler that displays a random number every time you move
+        your mouse inside this orange field.
+        <p>Click the button to remove the DIV's event handler.</p>
+        <button onclick="removeEv()" id="myBtn">Try it</button>
+    </div>
+
+    <p><strong>Note:</strong> The addEventListener() and removeEventListener() methods are not supported in Internet
+        Explorer 8 and earlier versions.</p>
+
+    <p id="res"></p>
+
+    <script>
+
+        document.getElementById('myDIV').addEventListener('mousemove', randNum);
+
+        function randNum() {
+            document.getElementById('res').innerHTML = Math.floor(Math.random() * 100);
+        }
+
+        function removeEv() {
+            document.getElementById('myDIV').removeEventListener('mousemove', randNum);
+        }
+
+    </script>
+
+</body>
+
+</html>

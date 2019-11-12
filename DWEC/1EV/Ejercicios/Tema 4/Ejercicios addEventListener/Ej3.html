@@ -1,0 +1,42 @@
+<!--
+    1. Recoger elemento 'myBtn'
+    2. Llamar a addEventListener 1 veces sobre él: evento click y ejecuto function1
+    3. Cambio el color de fondo de dicho botón
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        button {
+            border: 0;
+            padding: 1rem;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button id="myBtn">Hazme click!</button>
+
+    <script>
+
+        var button = document.getElementById('myBtn');
+        button.addEventListener('click', function1, false);
+
+        function function1() {
+            button.style.backgroundColor = 'dodgerBlue';
+            button.style.color = 'white';
+        }
+
+    </script>
+
+</body>
+
+</html>

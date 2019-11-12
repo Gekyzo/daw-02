@@ -1,0 +1,49 @@
+<!--
+    1. Recoger elemento 'myBtn'
+    2. Llamar a addEventListener 3 veces sobre él: mouseover, click, mouseout
+    3. En cada caso ejecutará una función distinta: function1, function2, function3.
+    Este mensaje se añadirá al mensaje anterior dentro del párrafo p
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button id="myBtn">Pasa el ratón por encima de mi!</button>
+
+    <p id="res"></p>
+
+    <script>
+
+        var button = document.getElementById('myBtn');
+        var res = document.getElementById('res');
+
+        button.addEventListener('mouseover', function1, false);
+        button.addEventListener('click', function2, false);
+        button.addEventListener('mouseout', function3, false);
+
+        function function1() {
+            res.innerHTML += '<p>Mouseover!</p>';
+        }
+
+        function function2() {
+            res.innerHTML += '<p>Click!</p>';
+        }
+
+        function function3() {
+            res.innerHTML += '<p>Mouseout!</p>';
+        }
+
+    </script>
+
+</body>
+
+</html>
