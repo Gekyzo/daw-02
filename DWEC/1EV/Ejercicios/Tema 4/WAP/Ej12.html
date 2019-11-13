@@ -1,0 +1,76 @@
+<!-- 
+    Define una aplicación web que te permita añadir usuarios a una lista junto con su edad.
+    Aquellos usuarios mayores de edad pero menores de 65 deberán tener un color de letra verde,
+    mientras que los mayores de 65 años presentarán un color rojo.
+    El resto de usuarios presentarán el color por defecto definido en el documento. 
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .adultos {
+            color: green;
+        }
+
+        .jubilados {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul>
+        <li>Nombre y Edad</li>
+    </ul>
+
+    <form>
+        <input type="text" name="name">
+        <input type="number" name="age">
+        <button>Añadir</button>
+    </form>
+
+    <script>
+
+        document.addEventListener('submit', function (e) {
+
+            // Cancelo el envío del formulario
+            e.preventDefault();
+
+            // Almaceno los nodos en variables
+            let list = document.getElementsByTagName('ul')[0];
+            let newUser = document.createElement('li');
+            let form = document.getElementsByTagName('form')[0];
+
+            // Incluyo los valores a la lista
+            if (form.name.value && form.age.value) {
+                newUser.innerHTML = `${form.name.value}, ${form.age.value} años.`;
+                if (form.age.value > 18 && form.age.value < 65) {
+                    newUser.classList.add('adultos');
+                }
+                if (form.age.value >= 65) {
+                    newUser.classList.add('jubilados');
+                }
+                list.appendChild(newUser);
+            } else {
+                alert('Debes rellenar ambos campos')
+                return;
+            }
+
+            // Limpio los valores del formulario y apunto el foco
+            form.name.value = null;
+            form.age.value = null;
+            form.name.focus();
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,37 @@
+<!--
+    Escribe un método el cual se invoque cada vez que la ventana principal se redimensione.
+    Debe mostrar en la ventana principal las dimensiones de la ventana.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p id="medidas"></p>
+
+    <script>
+
+        document.addEventListener('DOMContentLoaded', calculateSize);
+        window.addEventListener('resize', calculateSize)
+
+        function calculateSize() {
+
+            let width = window.outerWidth;
+            let height = window.outerHeight;
+            let res = `La ventana mide: ${width}px x ${height}px`;
+            document.getElementById('medidas').innerHTML = res;
+        }
+
+    </script>
+
+</body>
+
+</html>
