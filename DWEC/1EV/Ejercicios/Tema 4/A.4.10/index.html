@@ -1,0 +1,48 @@
+<!--
+    Modifica el ejemplo anterior usando los identificadores id en donde sea preciso,
+    y copia únicamente en la nueva lista el primer y último elemento de la lista original.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var total = 0;
+
+        function addNuevoItem() {
+            total++;
+            document.getElementsByTagName('ul')[0].innerHTML += '<li>Elemento' + total + '</li>';
+        }
+
+        function copiarLista() {
+            var lista = document.getElementsByTagName('ul')[0];
+
+            // Método 1: utilizando el array de nodos
+            var primerLi = lista.childNodes[0].outerHTML;
+            var ultimoLi = lista.childNodes[--total].outerHTML;
+
+            // Método 2: utilizando nodos hijos
+            // var primerLi = lista.firstChild.outerHTML;
+            // var ultimoLi = lista.lastChild.outerHTML;
+
+            lista.insertAdjacentHTML('afterend', primerLi);
+            lista.insertAdjacentHTML('afterend', ultimoLi);
+        }
+
+    </script>
+
+    <button id="btnParar" onclick="addNuevoItem()">Agregar nuevo elemento</button>
+    <button id="btnSalir" onclick="copiarLista()">Copiar lista al final</button>
+    <ul id="listaItems"></ul>
+</body>
+
+</html>

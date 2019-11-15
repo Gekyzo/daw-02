@@ -39,6 +39,19 @@
             document.getElementsByTagName('ul')[0].appendChild(elementoLi);
         }
 
+        function addItemsLista2() {
+            let textoLi = document.getElementById('txt').value;
+            document.getElementsByTagName('ul')[0].insertAdjacentHTML('afterEnd', '<li>' + textoLi + '</li>');
+        }
+
+        // Event listener para que se incluya un elemento en la lista al pulsar la tecla Enter en cualquier parte del documento
+        document.addEventListener('keypress', function (e) {
+            console.log('Key press: ' + e.key);
+            if (e.key == 'Enter') {
+                addItemsLista();
+            }
+        })
+
     </script>
 
 </body>
