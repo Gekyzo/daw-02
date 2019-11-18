@@ -27,15 +27,18 @@
             var lista = document.getElementsByTagName('ul')[0];
 
             // Método 1: utilizando el array de nodos
-            var primerLi = lista.childNodes[0].outerHTML;
-            var ultimoLi = lista.childNodes[--total].outerHTML;
+            // var primerLi = lista.childNodes[0].outerHTML;
+            // var ultimoLi = lista.childNodes[--total].outerHTML;
 
             // Método 2: utilizando nodos hijos
-            // var primerLi = lista.firstChild.outerHTML;
-            // var ultimoLi = lista.lastChild.outerHTML;
+            var primerLi = lista.firstChild.outerHTML;
+            var ultimoLi = lista.lastChild.outerHTML;
 
-            lista.insertAdjacentHTML('afterend', primerLi);
-            lista.insertAdjacentHTML('afterend', ultimoLi);
+            // Creo una nueva lista e inserto los <li>
+            var nuevaLista = document.createElement('ul');
+            nuevaLista.insertAdjacentHTML('beforeEnd', primerLi);
+            nuevaLista.insertAdjacentHTML('beforeEnd', ultimoLi);
+            document.body.appendChild(nuevaLista);
         }
 
     </script>
@@ -43,6 +46,7 @@
     <button id="btnParar" onclick="addNuevoItem()">Agregar nuevo elemento</button>
     <button id="btnSalir" onclick="copiarLista()">Copiar lista al final</button>
     <ul id="listaItems"></ul>
+    <ul id="listaItems2"></ul>
 </body>
 
 </html>

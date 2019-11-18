@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+
+<body>
+
+	<span>Texto a introducir en la tabla</span>
+	<input type="text" id="txtCaja"><br>
+	<input type="button" onclick="insertar();" value="Insertar texto nuevo">
+	<span>Selecciona Id para modificar su texto (0,1,2...)</span>
+	<input type="text" id="txtId">
+	<span>Nuevo Texto</span>
+	<input type="text" id="txtNuevo">
+	<input type="button" onclick="modificar();" value="Modificar texto">
+	<table id="tabla" style="border:1px dashed green;"></table>
+	<input type="button" onclick="cambiarValores();" value="Intercambiar el primer valor por el último">
+</body>
+
+<script>
+
+	function insertar() {
+
+		// Creo los elementos HTML necesarios
+		var input = document.getElementById('txtCaja').value;
+		var table = document.getElementsByTagName('table')[0];
+		var row = document.createElement('tr');
+
+		// Relleno los elementos
+		row.appendChild(document.createElement('td'));
+		row.appendChild(document.createElement('td'));
+		row.appendChild(document.createElement('td'));
+		row.childNodes[0].innerHTML = input;
+		row.childNodes[1].innerHTML = '<button onclick="copiarEncima(this)">Copiar encima</button>';
+		row.childNodes[2].innerHTML = '<button onclick="borrar(this)">Borrar</button>';
+
+		// Incluyo los nodos en el documento
+		table.appendChild(row);
+	}
+
+	function modificar() {
+		var input = document.getElementById('txtNuevo').value;
+		var trId = document.getElementById('txtId').value;
+		var trTarget = document.getElementsByTagName('tr')[trId];
+		trTarget.childNodes[0].innerHTML = input;
+	}
+
+</script>
+
+</html>
