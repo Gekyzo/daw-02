@@ -1,0 +1,123 @@
+<!--
+    Crear las expresiones regulares necesarias para resolver los siguientes puntos:
+
+    • Crear una expresión regular valide una fecha en formato "XX/XX/XXXX", donde "X" es un dígito.
+    Probarlo con la expresión: "Nací el 05/04/1982 en Zaragoza."
+
+    • Crear una expresión regular que valide una dirección de email.
+    Para simplificar, los valores antes de la @ pueden contener cualquier carácter alfanumérico, y los caracteres . y -,
+    mientras que los valores tra la @ pueden contener caracteres alfanuméricos, y el tipo de dominio puede tener una longitud de 2 o 3 caracteres.
+
+    • Dada la siguiente función que de reemplazo de caracteres, reescribirla utilizando expresiones regulares.
+    function escapeHTML(text) {
+        var replacements = [["&", "&amp;"], ["\"", "&quot;"],
+        ["<", "&lt;" ], [">", "&gt;"]];
+        forEach(replacements, function(replace) {
+        text = text.replace(replace[0], replace[1]);
+        });
+        return text;
+    }
+
+    • Dados un nombre y un apellido, crear la expresión regular necesaria para mostrarlos en orden inverso y separados por una coma.
+    Por ejemplo, la cadena "John Smith", convertirla en "Smith, John".
+    
+    • Crear una expresión regular que elimine las etiquetas potencialmente peligrosas (<script>...</script>) y todo su contenido de una cadena HTML.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        /**
+         * Comprobar fecha
+         */
+        function fecha(str) {
+            let regex = new RegExp;
+            regex = /(\d{2}\/){2}(\d){4}/;
+            if (str.match(regex)) {
+                console.log(`El patrón indicado aparece en la cadena '${str}'.`);;
+            } else {
+                console.log(`El patrón indicado NO aparece en la cadena '${str}'`);;
+            }
+        }
+
+        // Tests correctos
+        fecha('Nací el 05/04/1982 en Zaragoza')
+        fecha('18/11/2019')
+
+        // Tests incorrectos
+        fecha('Nací el 05-04-1982')
+        fecha('005-04-1982')
+        fecha('00-04-182')
+
+        /**
+         * Comprobar email
+         */
+        function email(str) {
+            let regex = new RegExp;
+            regex = /[a-zA-Z|\d|._]+@[a-zA-Z|\d]+[.][a-zA-z]{2,3}/;
+            if (str.match(regex)) {
+                console.log(`El email '${str}' es correcto.`);;
+            } else {
+                console.log(`El email '${str}' NO es correcto`);;
+            }
+        }
+
+        // Tests correctos
+        email('ciro.mora@gmail.com');
+        email('ciromora123@yahoo.net');
+        email('ciro_mora@hotmail.es');
+        email('ciro_mora@hotmail10.es');
+
+        // Tests incorrectos
+        email('ciromoragmail.com');
+        email('ciromora#gmail.com');
+        email('ciromora@gmailcom');
+        email('ciro/mora@gmailcom');
+
+        /**
+         * Refactorizar función
+         */
+        function escapeHTML(text) {
+            var replacements = [
+                ["&", "&amp;"],
+                ["\"", "&quot;"],
+                ["<", "&lt;"],
+                [">", "&gt;"]
+            ];
+            forEach(replacements, function (replace) {
+                text = text.replace(replace[0], replace[1]);
+            });
+            return text;
+        }
+
+        /**
+         * Eliminar scripts
+         */
+        function eliminarScript(str) {
+            let regex = new RegExp;
+            regex = /<(\/)?script>/g;
+            console.log(str.replace(regex, ''));
+        }
+
+        // Tests contienen script
+        eliminarScript("<script>Esto es un script maligno<\/script>");
+
+        // Tests no contienen script
+        eliminarScript("Esta cadena no tiene peligro");
+
+    </script>
+
+</body>
+
+</html>

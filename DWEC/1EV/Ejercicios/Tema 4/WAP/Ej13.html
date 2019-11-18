@@ -1,0 +1,102 @@
+<!-- 
+    Sobre el ejercicio anterior, realiza las siguientes mejoras:
+    a. Copiar todos los usuarios a una nueva lista de forma que los cambios realizados en la primera lista no afecten a la segunda.
+    b. Crea los elementos necesarios que permitan eliminar de la lista de usuarios aquellos cuya edad se corresponda con el valor introducido
+    por teclado. El elemento eliminado deberá figurar con un tipo de letra diferente y subrayado en la segunda lista,
+    de modo que pueda observarse que ha sido eliminado en la lista original.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .adultos {
+            color: green;
+        }
+
+        .jubilados {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h2>Lista original</h2>
+    <ul>
+        <li>Nombre y Edad</li>
+    </ul>
+
+    <h2>Lista copiada</h2>
+    <ul>
+        <li>Nombre y Edad</li>
+    </ul>
+    <button onclick="copiarLista()">Copiar lista original</button>
+
+    <h2>Introducir un nuevo usuario</h2>
+
+    <form>
+        <input type="text" name="name">
+        <input type="number" name="age">
+        <button>Añadir</button>
+    </form>
+
+    <script>
+
+        document.addEventListener('submit', function (e) {
+
+            // Cancelo el envío del formulario
+            e.preventDefault();
+
+            // Almaceno los nodos en variables
+            let list = document.getElementsByTagName('ul')[0];
+            let newUser = document.createElement('li');
+            let form = document.getElementsByTagName('form')[0];
+
+            // Incluyo los valores a la lista
+            if (form.name.value && form.age.value) {
+                newUser.innerHTML = `${form.name.value}, ${form.age.value} años.`;
+                if (form.age.value > 18 && form.age.value < 65) {
+                    newUser.classList.add('adultos');
+                }
+                if (form.age.value >= 65) {
+                    newUser.classList.add('jubilados');
+                }
+                list.appendChild(newUser);
+            } else {
+                alert('Debes rellenar ambos campos')
+                return;
+            }
+
+            // Limpio los valores del formulario y apunto el foco
+            form.name.value = null;
+            form.age.value = null;
+            form.name.focus();
+        });
+
+        function copiarLista() {
+
+            // Copio todos los elementos <li> de la lista original y elimino el primer <li>
+            let list = document.getElementsByTagName('ul')[0];
+            let listLis = Array.from(list.getElementsByTagName('li'));
+            listLis.shift();
+            var clone = listLis.slice();
+
+            // Incluyo la lista copiada en la lista original
+            let duplicatedList = document.getElementsByTagName('ul')[1];
+            for (let i = 0; i < clone.length; i++) {
+                duplicatedList.appendChild(clone[i]);
+            }
+
+        }
+
+    </script>
+
+</body>
+
+</html>

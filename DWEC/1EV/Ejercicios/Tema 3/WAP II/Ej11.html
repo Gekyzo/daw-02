@@ -1,0 +1,43 @@
+<!--
+    Definir una función que determine si la cadena de texto que se le pasa como parámetro es un palíndromo,
+    es decir, si se lee de la misma forma desde la izquierda y desde la derecha.
+    Ejemplo de palíndromo complejo: "La ruta nos aporto otro paso natural".
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function comprobarCadena(str) {
+            str = str.toLowerCase();
+            let strReverse = '';
+            for (let i = --str.length; i >= 0; i--) {
+                strReverse += str[i];
+            }
+
+            if (str.replace(/\s/g, '') === strReverse.replace(/\s/g, '')) {
+                console.log(`La cadena '${str}' es un palíndromo.`);
+            } else {
+                console.log(`Las cadenas '${str}' y '${strReverse}' son distintas.`);
+            }
+        }
+
+        comprobarCadena('La ruta nos aporto otro paso natural');
+        comprobarCadena('Luz azul');
+        comprobarCadena('holaquetal');
+
+    </script>
+
+</body>
+
+</html>

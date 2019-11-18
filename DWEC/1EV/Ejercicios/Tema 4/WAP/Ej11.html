@@ -1,0 +1,41 @@
+<!--
+    Escribe un método que será llamado al pulsar un botón. Dadas tres imágenes,
+    dicho método tendrá que mostrar de forma aleatoria una de ellas cada vez.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <button onclick="mostrar()">Mostrar imagen</button>
+
+    <img src="">
+
+    <script>
+
+        function mostrar() {
+            let img = document.getElementsByTagName('img')[0];
+            let src = [
+                'https://img2.rtve.es/i/?w=400&crop=no&o=no&i=1572334096041.jpg',
+                'https://img2.rtve.es/i/?w=400&crop=no&o=no&i=1572291010312.jpg',
+                'https://img2.rtve.es/i/?w=400&crop=no&o=no&i=1572290993255.jpg',
+                'https://img2.rtve.es/i/?w=400&crop=no&o=no&i=1572290993366.jpg',
+                'https://img2.rtve.es/i/?w=400&crop=no&o=no&i=1572351804864.jpg'
+            ];
+            let ran = Math.floor(Math.random() * 5, 0);
+            img.src = src[ran];
+        }
+
+    </script>
+
+</body>
+
+</html>
