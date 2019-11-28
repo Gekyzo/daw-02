@@ -19,7 +19,7 @@
     <script>
 
         function checkCase(str) {
-            str = str.trim();
+            str = str.replace(/\s/g, '');
             let mayusculas = /^[A-Z|\n]+$/;
             let minusculas = /^[a-z|\n]+$/;
             let RegExpMayus = new RegExp(mayusculas);

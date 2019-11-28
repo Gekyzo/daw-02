@@ -1,0 +1,47 @@
+<!-- 
+    Sin modificar el body del HTML, modificar el fondo de las filas pares para que aparezcan con el color #eeffee.
+    Utiliza el método *.setAttribute(). Recuerda que el documento tiene que estar cargado antes de modificar cualquier cosa.
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .striped {
+            background-color: #eeffee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <ul id="thelist">
+        <li>Coffee</li>
+        <li>Tea</li>
+        <li>Milk</li>
+    </ul>
+
+    <script>
+
+        window.onload = function () {
+            function pintarLista() {
+                var listaLis = document.getElementsByTagName('li');
+                for (let i = 0; i < listaLis.length; i++) {
+                    if (i % 2 == 0) {
+                        listaLis[i].setAttribute('class', 'striped');
+                        // listaLis[i].setAttribute('style', 'background-color: #eeffee');
+                    }
+                }
+            }
+        };
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!--
+    Dado el siguiente body y contenido del head, añadir la funcionalidad requerida
+    para que cuando el usuario haga click sobre una de las filas, ésta se borre.
+    Utiliza el método *.removeChild().
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        td,
+        th {
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        tr:nth-child(2n+1) {
+            background-color: #eeffee;
+        }
+    </style>
+</head>
+
+<body>
+
+    <table id="mixed">
+        <thead>
+            <tr>
+                <th>Value One</th>
+                <th>Value Two</th>
+                <th>Value Three</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>123.45</td>
+                <td>apple</td>
+                <td>true</td>
+            </tr>
+            <tr>
+                <td>65</td>
+                <td>banana</td>
+                <td>false</td>
+            </tr>
+            <tr>
+                <td>1034.99</td>
+                <td>cherry</td>
+                <td>false</td>
+            </tr>
+        </tbody>
+    </table>
+    <div id="result"></div>
+
+    <script>
+
+        var tableBody = document.getElementById('mixed').getElementsByTagName('tbody')[0];
+        tableBody.addEventListener('click', function (e) {
+            let element = e.target;
+            let row = element.parentNode;
+            this.removeChild(row);
+        })
+
+    </script>
+
+</body>
+
+</html>

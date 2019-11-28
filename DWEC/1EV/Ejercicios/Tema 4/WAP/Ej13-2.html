@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .texto_mini {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-decoration: line-through;
+        }
+    </style>
+    <script type="text/javascript">
+        function addItemsLista() {
+            var lista = document.getElementsByTagName("ul")[0];
+            lista.innerHTML =
+                lista.innerHTML +
+                "<li>" +
+                document.getElementById("nombre").value +
+                "-" +
+                document.getElementById("edad").value +
+                "</li>";
+            modificar();
+        }
+
+        function modificar() {
+            var age = document.getElementsByTagName("li");
+            var lugar;
+            var valor;
+            for (var i = 0; i < age.length; i++) {
+                lugar = age[i].innerHTML.indexOf("-");
+                valor = age[i].innerHTML.substr(lugar + 1);
+                if (valor >= 65) {
+                    age[i].style.color = "red";
+                } else if (valor >= 18 && valor < 65) {
+                    age[i].style.color = "green";
+                }
+            }
+        }
+
+        function copiarLista() {
+            var listaACopiar = document.getElementsByTagName("ul")[0];
+            document.getElementsByTagName("ul")[0].insertAdjacentHTML('afterEnd', listaACopiar.outerHTML);
+        }
+
+        function borrar() {
+            var listaABorrar = document.getElementsByTagName("ul")[0];
+            var elementosABorrar = listaABorrar.getElementsByTagName("li")
+            var elementosDeCopia = document.getElementsByTagName("ul")[1].getElementsByTagName("li");
+
+            var edad = document.getElementById("edadBorrar").value;
+            for (var i = 0; i < elementosDeCopia.length; i++) {
+                lugar = elementosDeCopia[i].innerHTML.indexOf('-');
+                valor = elementosDeCopia[i].innerHTML.substr(lugar + 1);
+                if (valor == edad) {
+                    elementosDeCopia[i].removeAttribute("style");
+                    elementosDeCopia[i].classList.add("texto_mini");
+                }
+            }
+            for (var i = 0; i < elementosABorrar.length; i++) {
+                lugar = elementosABorrar[i].innerHTML.indexOf('-');
+                valor = elementosABorrar[i].innerHTML.substr(lugar + 1);
+                if (valor == edad) {
+                    elementosABorrar[i].removeAttribute("style");
+                    elementosABorrar[i].classList.add("texto_mini");
+                }
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="elementosTag">
+        <h3>Lista dinámica</h3>
+        <ul></ul>
+        <hr />
+        <div>
+            <input type="text" placeholder="Introduzca un nombre" id="nombre">
+            <input type="number" placeholder="Introduzca la edad" id="edad">
+            <input type="text" placeholder="Introduzca edad a borrar" id="edadBorrar">
+            <input type="button" value="Insertar en la lista" onclick="addItemsLista()" />
+            <input type="button" value="Copiar la lista" onclick="copiarLista()" />
+            <input type="button" value="Borrar de lista original y tachar de la copiada" onclick="borrar()" />
+        </div>
+    </div>
+</body>
+
+</html>
