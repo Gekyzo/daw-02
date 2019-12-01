@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="timer">0</p>
+
+        <button id="stop">stop</button>
+
+        <button id="reset">reset</button>
+
+        <script>
+            var i = 0;
+            var resetBtn = document.getElementById('reset');
+            resetBtn.setAttribute('style', 'display: none');
+            var timer = setInterval(run, 1000);
+
+            function run() {
+                document.getElementById('timer').innerHTML = i++;
+            }
+
+            document
+                .getElementById('stop')
+                .addEventListener('click', function() {
+                    clearInterval(timer);
+                    resetBtn.setAttribute('style', 'display: block');
+                });
+
+            document
+                .getElementById('reset')
+                .addEventListener('click', function() {
+                    i = 0;
+                    timer = setInterval(run, 1000);
+                });
+        </script>
+    </body>
+</html>

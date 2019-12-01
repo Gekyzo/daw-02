@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+        <style>
+            img {
+                width: 200px;
+                height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Ejercicio 1</h1>
+        <img src="flor1.jpg" alt="" />
+        <img src="flor2.jpg" alt="" />
+        <img src="flor3.jpg" alt="" />
+        <img src="flor4.jpg" alt="" />
+
+        <p>
+            Lorem ipsum dolor flores amet consectetur adipisicing elit. Rem esse
+            ut vero, minus, laudantium flores quasi similique doloremque
+            accusamus neque non autem aliquam, rerum labore! Vitae flores
+            perspiciatis atque sapiente.
+        </p>
+
+        <button>Gracias, no mas flores</button>
+
+        <script>
+            function cambiarImagenes() {
+                var images = document.getElementsByTagName('img');
+                Array.from(images).forEach(image => {
+                    image.src = 'cactus.jpg';
+                });
+            }
+
+            function cambiarCabecera() {
+                var header = document.getElementsByTagName('h1')[0];
+                header.innerHTML = 'SORPRESA CACTUS!';
+                header.classList.add('colorplantas');
+            }
+
+            function cambiarTexto() {
+                var element = document.getElementsByTagName('p')[0];
+                var text = element.innerHTML;
+                var pattern = new RegExp(/(flores)/g);
+                element.innerHTML = text.replace(pattern, 'cactus');
+            }
+
+            function cambia() {
+                cambiarImagenes();
+                cambiarCabecera();
+                cambiarTexto();
+            }
+
+            document.addEventListener('click', cambia, false);
+
+            document
+                .getElementsByTagName('button')[0]
+                .addEventListener('click', function() {
+                    document.removeEventListener('click', cambia);
+                });
+        </script>
+    </body>
+</html>

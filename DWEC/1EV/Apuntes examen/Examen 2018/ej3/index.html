@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function validarTelefono(telefono) {
+                var pattern = /^[6|7|8|9]{1}[0-9]{2}([\s-]?[0-9]{3}){2}$/;
+                exprReg = new RegExp(pattern);
+                if (telefono.match(exprReg)) {
+                    alert('El teléfono ' + telefono + ' es correcto');
+                } else {
+                    alert(
+                        'El teléfono ' +
+                            telefono +
+                            '  debe cumplir el patrón ' +
+                            pattern
+                    );
+                }
+            }
+            // Teléfonos válidos: prefijo
+            validarTelefono('712346579');
+            validarTelefono('812346579');
+            validarTelefono('612346579');
+            validarTelefono('912346579');
+            validarTelefono('912 346579');
+            validarTelefono('912-346579');
+            validarTelefono('912 346 579');
+            validarTelefono('912-346-579');
+
+            // Teléfonos inválidos
+            validarTelefono('112346579');
+            validarTelefono('212346579');
+            validarTelefono('312 346 579');
+            validarTelefono('412 346 5790');
+            validarTelefono('512-346-579');
+        </script>
+    </body>
+</html>
