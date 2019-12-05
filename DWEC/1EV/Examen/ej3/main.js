@@ -11,8 +11,12 @@ function valid_email(str) {
 
     //Para acabar, debe venir un punto y caracteres alfabéticos minúsculas, de los cuales, deben venir 2 o 3.
 
+    // var mailformat = new RegExp(
+    //     /^[a-zA-Z0-9_]+([.-]?[a-zA-Z0-9_]+)?@[a-zA-Z0-9_]?([.-]?[a-zA-Z0-9_]+)?.[a-z0-9]{2,3}$/
+    // )
+
     var mailformat = new RegExp(
-        /^[a-zA-Z0-9_]+([.-]?[a-zA-Z0-9_]+)?@[a-zA-Z0-9_]?([.-]?[a-zA-Z0-9_]+)?.[a-z0-9]{2,3}$/
+        /^[a-zA-Z0-9_]+([.-]?[a-zA-Z0-9_]+)?@[a-zA-Z0-9_]?([.-]?[a-zA-Z0-9_]+)?(.)[a-z]{2,3}$/
     )
     //Hacer los casos de prueba suficientes, para probar todos los casos.
 
