@@ -85,18 +85,21 @@ Se trata de una técnica idónea en la etapa de diseño, aunque también puede s
 - Encontrar el icono de menú.
   - Resultado: el usuario localiza el icono adecuado.
   - Éxito: no se muestra ningún mensaje.
+  - Mejoras: que el icono del menú sea más grande.
 - Realizar clic sobre el menú.
   - Resultado: se despliega el menú.
-  - Éxito: no se muestra ningún mensaje.
+  - Éxito: el menú se despliega.
 - Encontrar el submenú correspondiente a contacto.
   - Resultado: el usuario localiza el icono adecuado.
   - Éxito: no se muestra ningún mensaje.
+  - Mejoras: que los submenu aparezcan plegados.
 - Realizar clic sobre contacto.
   - Resultado: se navega hasta la página de contacto.
   - Éxito: no se muestra ningún mensaje.
 - Encontrar el teléfono de contacto.
   - Resultado: el usuario localiza el texto adecuado.
   - Éxito: no se muestra ningún mensaje.
+  - Mejoras: incluir un icono de teléfono al lado.
 - Realizar clic sobre el número de teléfono.
   - Resultado: se completa la tarea.
   - Fallo: el usuario no realiza ninguna acción.
