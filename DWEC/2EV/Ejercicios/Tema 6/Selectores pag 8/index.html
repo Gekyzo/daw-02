@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="opciones">
+        <ul>
+            <li></li>
+            <li></li>
+        </ul>
+    </div>
+
+    <button onclick="appendLi()">Insertar nuevo LI</button>
+
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('div.opciones')
+                .find('li')
+                .eq(1)
+                .append('nuevo')
+                .end()
+                .eq(0)
+                .append('antiguo');
+        })
+
+        function appendLi() {
+            $('div.opciones')
+                .find('ul')
+                .append('<li>Nuevo LI insertado desde jQuery</li>')
+        }
+    </script>
+</body>
+
+</html>
