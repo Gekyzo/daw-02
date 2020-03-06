@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .nuevaClase {
+                color: green;
+                font-size: 25px;
+            }
+            .miClase1 {
+                color: red;
+                font-size: 25px;
+            }
+            .miClase2 {
+                color: orange;
+                font-size: 25px;
+            }
+            .miClase3 {
+                color: blue;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Primer párrafo</p>
+        <p>Segund párrafo</p>
+        <p>Tercer párrafo</p>
+
+        <button>click</button>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('button').on('click', function() {
+                    $('p').addClass(function(index) {
+                        return 'miClase' + (index + 1)
+                    })
+                })
+            })
+        </script>
+    </body>
+</html>

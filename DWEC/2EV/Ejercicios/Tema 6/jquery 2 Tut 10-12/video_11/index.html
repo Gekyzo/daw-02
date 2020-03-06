@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .nuevaClase {
+                color: blue;
+                font-size: 25px;
+            }
+
+            .miClase {
+                background: green;
+                text-align: center;
+                padding-top: 50px;
+                width: 100px;
+                height: 60px;
+                font-size: 25px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="caja">caja</p>
+        <button id="add">add</button>
+        <button id="remove">remove</button>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#add').on('click', function() {
+                    $('#caja').addClass('miClase')
+                })
+                $('#remove').on('click', function() {
+                    $('#caja').removeClass('miClase')
+                })
+            })
+        </script>
+    </body>
+</html>

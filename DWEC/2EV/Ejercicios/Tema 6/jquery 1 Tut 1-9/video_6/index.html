@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <p id="texto1">Programación</p>
+        <p id="texto2">Código</p>
+        <br />
+
+        <button id="boton1">Cambiar text</button>
+        <button id="boton2">Cambiar html</button>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#boton1').on('click', function() {
+                    $('#texto1').text('<b>Hola mundo</b>')
+                })
+                $('#boton2').on('click', function() {
+                    $('#texto2').html('<b>Tutoriales</b>')
+                })
+            })
+        </script>
+    </body>
+</html>

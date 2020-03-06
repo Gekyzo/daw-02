@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <form action="">
+            <p>Nombre: <input type="text" /></p>
+            <p>Email: <input type="email" /></p>
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('input[type="text"]').keydown(function() {
+                    $(this).css({ backgroundColor: 'yellow' })
+                })
+
+                $('input[type="email"]').keydown(function() {
+                    $(this).css({ backgroundColor: 'yellow' })
+                })
+            })
+        </script>
+    </body>
+</html>

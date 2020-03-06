@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        
+        Nombre<input type="text" id="midID" value="nombre"><br>
+        Email<input type="text" id="midID2" value="nombre2"><br>
+        <div id="info"></div><br>
+
+        <button>click</button>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('button').on('click', function() {
+                    $('input[type="text"]').attr('id', 'codigo')
+                })
+            })
+        </script>
+    </body>
+</html>

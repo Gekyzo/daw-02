@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            #p1 {
+                background: green;
+                font-size: 25px;
+                padding: 5px;
+            }
+
+            .miClase {
+                background: orange;
+                font-size: 25px;
+                padding: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <p id="p1">Primer párrafo</p>
+        <p class="miClase">Segundo párrafo</p>
+
+        <button>Remover atributos</button>
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('button').on('click', function() {
+                    $('p').removeAttr('id class')
+                })
+            })
+        </script>
+    </body>
+</html>

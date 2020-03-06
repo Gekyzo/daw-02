@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" id="espacio" />
+        <input type="submit" id="enviar" value="enviar" />
+
+        <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('#enviar').on('click', function() {
+                    let x = $('#espacio').val()
+                    alert(x)
+                })
+            })
+        </script>
+    </body>
+</html>
