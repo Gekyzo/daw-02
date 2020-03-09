@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <style type="text/css">
+            /* The page body */
+            html,
+            body {
+                background: #333;
+                overflow: hidden;
+                font-family: Helvetica, Arial, sans-serif;
+            }
+
+            /* The div holding the wooden table img tag */
+            #wooden-table {
+                position: absolute;
+                left: -5000px;
+            }
+
+            /* The light table itself */
+            #lighttable {
+                position: relative;
+                width: 800px;
+                height: 450px;
+                background: #eee url(images/wooden-table.jpg);
+                padding: 70px;
+                margin: 0 auto;
+                border: 20px solid #111;
+                display: none;
+            }
+
+            /* Photos on the light table */
+            #lighttable img {
+                border: 10px solid #fff;
+                box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+                -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+                -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.9);
+                position: absolute;
+                left: -9999px;
+                top: -9999px;
+            }
+
+            /* The description at the top of the page */
+
+            #description {
+                padding: 10px 10px 5px 10px;
+                background: #111;
+                color: #fff;
+                width: 45em;
+                margin: 0 auto -5px auto;
+                text-align: center;
+            }
+
+            #description h1 {
+                font-size: 14px;
+            }
+
+            #description a {
+                color: #bbf;
+            }
+        </style>
+
+        <script type="text/javascript" src="jquery.js"></script>
+        <script
+            type="text/javascript"
+            src="jquery-ui-1.8.2.custom.min.js"
+        ></script>
+
+        <script type="text/javascript">
+            var newImageZIndex = 1 // To make sure newly-loaded images land on top of images on the table
+            var loaded = false // Used to prevent initPhotos() running twice
+
+            // When the document is ready, fire up the table!
+            $(init)
+
+            // When the wooden table image has loaded, start bringing in the photos
+            function init() {
+                var woodenTable = $('#wooden-table img')
+                woodenTable.load(initPhotos)
+
+                // Hack for browsers that don't fire load events for cached images
+                // Hackea navegadores que no activan eventos de carga para imágenes en caché
+                // Nos aseguramos que se cargan las imágenes que estén en caché, es decir  esté completa la carga del elemento 0 del woodenTable,
+                // Lanzamos con trigger el load, para cargar el woodenTable.
+
+                if (woodenTable.get(0).complete) $(woodenTable).trigger('load')
+            }
+
+            // Set up each of the photos on the table
+            // Configura cada una de las fotos en la mesa
+
+            function initPhotos() {
+                // (Ensure this function doesn't run twice)
+                // Asegúrese de que esta función no se ejecute dos veces
+                if (loaded) return
+                loaded = true
+
+                // The table image has loaded, so bring in the table
+                // La imagen de la tabla se ha cargado, así que traiga la tabla
+
+                //1. SELECCIONAR LA DIV lighttable y hacer que aparezca dicha div (que contiene todas las fotos) desvaneciéndose a fast.
+                let $lightTable = $('#lighttable')
+                $lightTable.show().fadeIn('fast')
+
+                // 2. Process each photo in turn...
+                // 2. Selecciona cada img de lighttable y procesa para cada una de ellas la siguiente function(index)
+                let $images = $lightTable.children()
+                $.each($images, function(index, image) {
+                    // Set a random position and angle for this photo
+                    // Establece la propiedad left, top y angle de forma aleatoria para cada foto
+                    var left = Math.floor(Math.random() * 450 + 100)
+                    var top = Math.floor(Math.random() * 100 + 100)
+                    var angle = Math.floor(Math.random() * 60 - 30)
+
+                    //3. Establece la propiedad css left, top y transform con un rotate del angle especificado al elemento activo en ese momento seleccionado con $.
+                    $(this).css('left', left + 'px')
+                    $(this).css('top', top + 'px')
+                    $(this).css('transform', 'rotate(' + angle + 'deg)')
+                    $(this).css('-moz-transform', 'rotate(' + angle + 'deg)')
+                    $(this).css('-webkit-transform', 'rotate(' + angle + 'deg)')
+                    $(this).css('-o-transform', 'rotate(' + angle + 'deg)')
+
+                    // Make the photo draggable
+                    $(this).draggable({
+                        containment: 'parent',
+                        stack: '#lighttable img',
+                        cursor: 'pointer',
+                    })
+
+                    //4. Oculta la foto activa en ese momento seleccionada con $
+                    // Hide the photo for now, in case it hasn't finished loading
+                    $(this).hide()
+
+                    // When the photo image has loaded...
+                    //5. Selecciona la imagen activa, aplica el método cargar para que ejecute la siguiente función,
+                    //   en la que vamos a hacer una animación para que aparezcan las fotos en el tablón
+                    $(this).load(function(event) {
+                        // (Ensure this function doesn't run twice)
+                        if ($(this).data('loaded')) return
+                        $(this).data('loaded', true)
+                        //6. Guarda en dos variables el ancho y el alto que tengan en ese momento la imagen seleccionada con $.
+                        // Record the photo's true dimensions
+                        let trueHeight = $(this).outerHeight(true)
+                        let trueWidth = $(this).outerWidth(true)
+
+                        // Make the photo bigger, so it looks like it's high above the table
+                        //7. Cambia el ancho y el alto como propiedad css de la imagen activa,previamente seleccionada con $,
+                        //   muliplicando el valor guardado en el paso anterior por 1.5
+                        $(this).css({
+                            height: trueHeight * 1.5,
+                            width: trueWidth * 1.5,
+                        })
+
+                        //8. Cambia la propiedad css de opacity a 0, de la imagen activa, previamente seleccionada con $.
+                        // Make it completely transparent, ready for fading in
+                        $(this).css({ opacity: 0 })
+
+                        //9. Asegúrate de que z-index de las nuevas imágenes activas en este momento es mayor que las que tenían las que ya estaban en la tabla,
+                        //   sumándole 1 a la vble newImageZIndex
+                        // Make sure its z-index is higher than the photos already on the table
+                        newImageZIndex++
+
+                        //10. Selecciona la imagen activa y aplica el método animate, en el que establezcas:
+                        //          ancho: variable ancho guardada anteriormente
+                        //          alto: variable alto guardada anterioremente
+                        //          opacidad: 0.95
+                        //          Hacer que esta animación trasncurra en 1200 ms.
+                        // Gradually reduce the photo's dimensions to normal, fading it in as we go
+                        $(this).animate(
+                            {
+                                height: trueHeight,
+                                width: trueWidth,
+                                opacity: 0.95,
+                            },
+                            1200
+                        )
+                    })
+
+                    // Hack for browsers that don't fire load events for cached images
+                    if (this.complete) $(this).trigger('load')
+                })
+            }
+        </script>
+    </head>
+
+    <body>
+        <div id="wooden-table">
+            <img src="images/wooden-table.jpg" alt="Wooden table image" />
+        </div>
+
+        <div id="description">
+            <h1>
+                Table
+                <span style="font-weight: normal;"
+                    >A "light table" with photos
+                </span>
+            </h1>
+        </div>
+
+        <div id="lighttable">
+            <img src="slides/bird-marking.jpg" alt="Bird Marking" />
+            <img src="slides/double-propellors.jpg" alt="Double Propellors" />
+            <img
+                src="slides/moody-listener-satellite-dish.jpg"
+                alt="Moody Listener Satellite Dish"
+            />
+            <img src="slides/orange-hatches.jpg" alt="Orange Hatches" />
+            <img src="slides/plane-nose-closeup.jpg" alt="Plane Nose Closeup" />
+        </div>
+    </body>
+</html>
