@@ -1,0 +1,5 @@
+- Requisitos
+- Casos de uso
+- Modelo relacional BD
+- Estructura del proyecto. Relación entre Modelo, Vista y Controlador (con gráfico)
+- Estructura de carpeta
