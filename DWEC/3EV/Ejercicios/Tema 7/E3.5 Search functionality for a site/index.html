@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Search Functionality</title>
+    </head>
+
+    <body>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <input type="submit" id="fetch" />
+
+        <dl>
+            <dt>Age</dt>
+            <dd class="age">-</dd>
+
+            <dt>Location</dt>
+            <dd class="location">-</dd>
+
+            <dt>Job</dt>
+            <dd class="job">-</dd>
+        </dl>
+
+        <script
+            src="https://code.jquery.com/jquery-3.4.1.js"
+            integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU="
+            crossorigin="anonymous"
+        ></script>
+
+        <script>
+            $('#fetch').on('click', function() {
+                const name = $('#name').val()
+
+                $.ajax({
+                    url: 'request.php',
+                    type: 'get',
+                    data: {
+                        name: name,
+                    },
+                    dataType: 'json',
+                    success: success,
+                })
+            })
+
+            function success(data) {
+                const { age, location, job } = data.information
+
+                $('.age').html(age)
+                $('.location').html(location)
+                $('.job').html(job)
+            }
+        </script>
+    </body>
+</html>
